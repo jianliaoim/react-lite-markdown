@@ -1,0 +1,7 @@
+*.log
+
+/index.html
+
+/build
+/lib
+/node_modules

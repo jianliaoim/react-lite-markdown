@@ -1,0 +1,52 @@
+{
+  "name": "react-lite-markdown",
+  "version": "0.9.0",
+  "description": "Markdown renderer of talk.ai",
+  "main": "lib/index.js",
+  "dependencies": {
+    "classnames": "^2.2.0",
+    "marked": "^0.3.5",
+    "object-assign": "^4.0.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "css-loader": "^0.23.0",
+    "del": "^2.1.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.2",
+    "node-libs-browser": "^0.5.3",
+    "reset.css": "^2.0.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1",
+    "xss": "^0.2.7"
+  },
+  "scripts": {
+    "build": "rm -rf ./build/ && ./node_modules/.bin/webpack --config webpack.min.coffee --progress",
+    "script": "rm -rf ./lib/ && ./node_modules/.bin/coffee -o ./lib/ -c ./src/",
+    "prepublish": "npm run script",
+    "start": "./node_modules/.bin/webpack-dev-server --hot --progress"
+  },
+  "keywords": [
+    "markdown",
+    "react",
+    "react-lite",
+    "react-markdown",
+    "talk.ai"
+  ],
+  "author": "talk.ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teambition/react-lite-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teambition/react-lite-markdown/issues"
+  },
+  "homepage": "https://github.com/teambition/react-lite-markdown#readme"
+}

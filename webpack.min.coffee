@@ -1,0 +1,17 @@
+fs = require 'fs'
+webpack = require 'webpack'
+
+config = require './webpack.config'
+
+module.exports =
+  entry:
+    main: config.entry.main.slice 2
+  output:
+    path: config.output.path
+    filename: config.output.filename
+    publicPath: './build/'
+  resolve: config.resolve
+  module: config.module
+  plugins: config.plugins.concat [
+    new webpack.optimize.UglifyJsPlugin sourceMap: false
+  ]
