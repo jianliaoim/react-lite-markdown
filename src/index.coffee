@@ -3,25 +3,15 @@ React = require 'react'
 assign = require 'object-assign'
 marked = require 'marked'
 
-renderer = new marked.Renderer()
-
-renderer.heading = (text, level) ->
-  """
-    <h#{level}>#{ text }</h#{level}>
-  """
+renderer = require './util/renderer'
 
 { div } = React.DOM
 T = React.PropTypes
 
 markdownOption =
-  gfm: true
-  tables: true
   breaks: true
-  pedantic: false
   renderer: renderer
-  sanitize: false
-  smartLists: true
-  smartypants: true
+  sanitize: true
 
 module.exports = React.createClass
   displayName: 'lite-markdown'
