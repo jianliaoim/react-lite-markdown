@@ -8,13 +8,14 @@ module.exports =
       'webpack-dev-server/client?http://0.0.0.0:8080'
       'webpack/hot/dev-server'
       './example/app.coffee'
-      './example/style.css'
+      './example/app.css'
     ]
   output:
     path: './build/'
     filename: '[name].js'
     publicPath: 'http://localhost:8080/'
-  resolve: extensions: ['.js', '.jsx', '.coffee', '']
+  resolve:
+    extensions: [ '.coffee', '.js', '.jsx', '' ]
   module:
     loaders: [
       { test: /\.coffee$/, loader: 'coffee' }
@@ -28,4 +29,5 @@ module.exports =
       minify: collapseWhitespace: true
       filename: '../index.html'
       template: './example/index.html'
+    new webpack.NoErrorsPlugin()
   ]

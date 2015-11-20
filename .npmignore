@@ -1,7 +1,6 @@
 *.log
 
 /index.html
-/gulpfile.coffee
 /webpack.*
 
 /build

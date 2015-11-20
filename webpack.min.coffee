@@ -1,4 +1,3 @@
-fs = require 'fs'
 webpack = require 'webpack'
 
 config = require './webpack.config'
@@ -13,5 +12,8 @@ module.exports =
   resolve: config.resolve
   module: config.module
   plugins: config.plugins.concat [
+    new webpack.DefinePlugin 'process.env': 'NODE_ENV': '\'production\''
+    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.OccurenceOrderPlugin()
     new webpack.optimize.UglifyJsPlugin sourceMap: false
   ]
