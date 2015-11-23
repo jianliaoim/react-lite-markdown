@@ -27,9 +27,11 @@
     "xss": "^0.2.7"
   },
   "scripts": {
-    "build": "rm -rf ./build/ && ./node_modules/.bin/webpack --config webpack.min.coffee --progress",
-    "script": "rm -rf ./lib/ && ./node_modules/.bin/coffee -o ./lib/ -c ./src/",
+    "build": "./node_modules/.bin/webpack --config webpack.min.coffee --progress",
+    "script": "./node_modules/.bin/coffee -o ./lib/ -c ./src/",
+    "prebuild": "rm -rf ./build/",
     "prepublish": "npm run script",
+    "prescript": "rm -rf ./lib/",
     "start": "./node_modules/.bin/webpack-dev-server --hot --progress"
   },
   "keywords": [
