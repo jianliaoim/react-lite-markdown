@@ -1,5 +1,6 @@
 xss = require 'xss'
 React = require 'react'
+emojify = require 'emojify.js'
 
 LiteMarkdown = React.createFactory require '../src/index'
 
@@ -11,6 +12,10 @@ App = React.createFactory React.createClass
   getInitialState: ->
     text: ''
 
+  componentWillMount: ->
+    emojify.setConfig img_dir: 'https://dn-talk.oss.aliyuncs.com/icons/emoji'
+    emojify.defaultConfig.ignore_emoticons = true
+
   onTextChange: (event) ->
     @setState text: event.target.value
 
@@ -21,6 +26,7 @@ App = React.createFactory React.createClass
       LiteMarkdown
         name: 'example'
         value: @state.text
+        emojify: emojify
         className: 'markdown-body'
 
 React.render App(), document.getElementById 'app-mount'

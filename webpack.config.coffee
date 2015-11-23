@@ -20,6 +20,7 @@ module.exports =
     extensions: [ '.coffee', '.js', '.jsx', '' ]
   module:
     loaders: [
+      { test: /\.json$/, loader: 'json' }
       { test: /\.coffee$/, loader: 'coffee' }
       { test: /\.css$/, loader: ExtractTextPlugin.extract 'style', 'css?importLoaders=1!autoprefixer' }
       { test: /.(eot|svg|ttf|woff(2)?)(\?[a-z0-9=\.]+)?$/, loader: "url?limit=10000&name=#{ fontName }" }

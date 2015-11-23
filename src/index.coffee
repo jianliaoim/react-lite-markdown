@@ -1,19 +1,10 @@
-require 'teambition-icon-fonts/css/teambition-ui-icons.css'
-
 cx = require 'classnames'
 React = require 'react'
-assign = require 'object-assign'
-marked = require 'marked'
-
-renderer = require './util/renderer'
+MarkdownIt = require 'markdown-it'
+MarkdownItEmoji = require 'markdown-it-emoji'
 
 { div } = React.DOM
 T = React.PropTypes
-
-markdownOption =
-  breaks: true
-  renderer: renderer
-  sanitize: true
 
 module.exports = React.createClass
   displayName: 'lite-markdown'
@@ -21,20 +12,28 @@ module.exports = React.createClass
   propTypes:
     name: T.string
     value: T.string
-    option: T.object
+    emojify: T.func
     className: T.string
 
   getDefaultProps: ->
     name: ''
     value: ''
-    option: markdownOption
-    className: ''
+    className: 'markdown-body'
+
+  componentWillMount: ->
+    @md = new MarkdownIt()
+    .use MarkdownItEmoji
+    .disable 'image'
+
+    @md.renderer.rules.emoji = (token, idx) =>
+      if token[idx].type is 'emoji'
+        @props.emojify.replace ":#{ token[idx].markup }:"
 
   getClassName: ->
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
 
   getMarkup: ->
-    marked @props.value, assign markdownOption, @props.option
+    @md.render @props.value
 
   render: ->
     div className: @getClassName(),
