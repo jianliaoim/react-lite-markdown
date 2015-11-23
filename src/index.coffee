@@ -1,3 +1,5 @@
+require 'teambition-icon-fonts/css/teambition-ui-icons.css'
+
 cx = require 'classnames'
 React = require 'react'
 assign = require 'object-assign'
@@ -32,8 +34,8 @@ module.exports = React.createClass
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
 
   getMarkup: ->
-    __html: marked @props.value, assign markdownOption, @props.option
+    marked @props.value, assign markdownOption, @props.option
 
   render: ->
     div className: @getClassName(),
-      div className: @props.className, dangerouslySetInnerHTML: @getMarkup()
+      div className: @props.className, dangerouslySetInnerHTML: __html: @getMarkup()

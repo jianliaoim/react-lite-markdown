@@ -2,6 +2,8 @@ webpack = require 'webpack'
 ExtractTextPlugin = require 'extract-text-webpack-plugin'
 HtmlWebpackPlugin = require 'html-webpack-plugin'
 
+fontName = 'fonts/[name].[ext]'
+
 module.exports =
   entry:
     main: [
@@ -20,6 +22,7 @@ module.exports =
     loaders: [
       { test: /\.coffee$/, loader: 'coffee' }
       { test: /\.css$/, loader: ExtractTextPlugin.extract 'style', 'css?importLoaders=1!autoprefixer' }
+      { test: /.(eot|svg|ttf|woff(2)?)(\?[a-z0-9=\.]+)?$/, loader: "url?limit=10000&name=#{ fontName }" }
     ]
   plugins: [
     new ExtractTextPlugin 'style.css'
