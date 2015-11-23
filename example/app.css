@@ -1,6 +1,6 @@
 @import "~reset.css";
 
-@import "./markdown.css";
+@import "../style/markdown.css";
 
 *, *:before, *:after {
   box-sizing: border-box;

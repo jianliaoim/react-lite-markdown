@@ -4,11 +4,10 @@
 }
 
 .markdown-body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-  font-size: 16px;
+
+  font-family: Roboto, "Helvetica Neue", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 14px;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -155,6 +154,14 @@
 
 .markdown-body blockquote {
   margin: 0;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
 }
 
 .markdown-body ul,
