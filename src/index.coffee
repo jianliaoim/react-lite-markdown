@@ -27,7 +27,7 @@ module.exports = React.createClass
 
     @md.renderer.rules.emoji = (token, idx) =>
       if token[idx].type is 'emoji'
-        @props.emojify.replace ":#{ token[idx].markup }:"
+        @props.emojify ":#{ token[idx].markup }:"
 
   getClassName: ->
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
