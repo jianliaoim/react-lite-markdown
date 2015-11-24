@@ -1,6 +1,6 @@
 {
   "name": "react-lite-markdown",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "React markdown renderer of 简聊",
   "main": "lib/index.js",
   "dependencies": {
