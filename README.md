@@ -1,5 +1,6 @@
 React Lite Markdown
 ===================
+[![Build status][travis-image]][travis-url]
 
 React markdown renderer of [Talk](http://jianliao.com)
 
@@ -26,3 +27,6 @@ Develop
 License
 -------
 [MIT](https://opensource.org/licenses/MIT)
+
+[travis-url]: https://travis-ci.org/teambition/react-lite-markdown
+[travis-image]: https://travis-ci.org/teambition/react-lite-markdown.svg?branch=master
