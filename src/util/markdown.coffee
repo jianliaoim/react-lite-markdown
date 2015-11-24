@@ -6,9 +6,9 @@ markdown = new MarkdownIt()
 .use MarkdownItEmoji
 .disable 'image'
 
-exports.render = markdown.render
+exports.renderer = markdown
 
-exports.setEmoji = (fn) ->
+exports.setEmojiFn = (fn) ->
   markdown.renderer.rules.emoji = (token, idx) =>
     if token[idx].type is 'emoji'
       fn ":#{ token[idx].markup }:"

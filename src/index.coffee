@@ -21,13 +21,13 @@ module.exports = React.createClass
     className: 'markdown-body'
 
   componentWillMount: ->
-    markdown.setEmoji @props.emojify
+    markdown.setEmojiFn @props.emojify
 
   getClassName: ->
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
 
   getMarkup: ->
-    markdown.render @props.value
+    markdown.renderer.render @props.value
 
   render: ->
     div className: @getClassName(),
