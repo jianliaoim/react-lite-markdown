@@ -1,7 +1,7 @@
 cx = require 'classnames'
 React = require 'react'
-MarkdownIt = require 'markdown-it'
-MarkdownItEmoji = require 'markdown-it-emoji'
+
+markdown = require './util/markdown'
 
 { div } = React.DOM
 T = React.PropTypes
@@ -21,19 +21,13 @@ module.exports = React.createClass
     className: 'markdown-body'
 
   componentWillMount: ->
-    @md = new MarkdownIt()
-    .use MarkdownItEmoji
-    .disable 'image'
-
-    @md.renderer.rules.emoji = (token, idx) =>
-      if token[idx].type is 'emoji'
-        @props.emojify ":#{ token[idx].markup }:"
+    markdown.setEmoji @props.emojify
 
   getClassName: ->
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
 
   getMarkup: ->
-    @md.render @props.value
+    markdown.render @props.value
 
   render: ->
     div className: @getClassName(),

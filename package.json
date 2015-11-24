@@ -28,10 +28,10 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.min.coffee --progress",
-    "script": "./node_modules/.bin/coffee -o ./lib/ -c ./src/",
     "prebuild": "rm -rf ./build/",
     "prepublish": "npm run script",
     "prescript": "rm -rf ./lib/",
+    "script": "./node_modules/.bin/coffee -o ./lib/ -c ./src/",
     "start": "./node_modules/.bin/webpack-dev-server --hot --progress"
   },
   "keywords": [
