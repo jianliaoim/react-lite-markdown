@@ -1,5 +1,6 @@
 *.log
 
+/travis.yml
 /index.html
 /preprocessor.js
 /webpack.*
