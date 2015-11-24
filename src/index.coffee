@@ -18,6 +18,7 @@ module.exports = React.createClass
   getDefaultProps: ->
     name: ''
     value: ''
+    emojify: (->)
     className: 'markdown-body'
 
   componentWillMount: ->

@@ -1,8 +1,10 @@
 *.log
 
 /index.html
+/preprocessor.js
 /webpack.*
 
+/__tests__
 /build
 /example
 /node_modules

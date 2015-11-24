@@ -6,6 +6,8 @@ markdown = new MarkdownIt()
 .use MarkdownItEmoji
 .disable 'image'
 
+# exports
+
 exports.renderer = markdown
 
 exports.setEmojiFn = (fn) ->

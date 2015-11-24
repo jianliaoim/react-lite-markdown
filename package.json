@@ -16,13 +16,14 @@
     "css-loader": "^0.23.0",
     "emojify.js": "^1.1.0",
     "extract-text-webpack-plugin": "^0.9.1",
-    "file-loader": "^0.8.4",
-    "html-webpack-plugin": "^2.0.4",
-    "json-loader": "^0.5.3",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.1.0",
+    "jest-cli": "^0.8.0",
+    "json-loader": "^0.5.4",
     "node-libs-browser": "^0.5.3",
     "reset.css": "^2.0.2",
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.8",
     "webpack-dev-server": "^1.12.1"
   },
@@ -32,7 +33,8 @@
     "prepublish": "npm run script",
     "prescript": "rm -rf ./lib/",
     "script": "./node_modules/.bin/coffee -o ./lib/ -c ./src/",
-    "start": "./node_modules/.bin/webpack-dev-server --hot --progress"
+    "start": "./node_modules/.bin/webpack-dev-server --hot --progress",
+    "test": "./node_modules/.bin/jest"
   },
   "keywords": [
     "markdown",
@@ -50,5 +52,22 @@
   "bugs": {
     "url": "https://github.com/teambition/react-lite-markdown/issues"
   },
-  "homepage": "https://github.com/teambition/react-lite-markdown#readme"
+  "homepage": "https://github.com/teambition/react-lite-markdown#readme",
+  "jest": {
+    "scriptPreprocessor": "preprocessor.js",
+    "moduleFileExtensions": [
+      "coffee",
+      "js"
+    ],
+    "testFileExtensions": [
+      "coffee",
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "./node_modules/classnames",
+      "./node_modules/markdown-it",
+      "./node_modules/markdown-it-emoji",
+      "./node_modules/react"
+    ]
+  }
 }
