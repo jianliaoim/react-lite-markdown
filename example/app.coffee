@@ -1,4 +1,3 @@
-xss = require 'xss'
 React = require 'react'
 emojify = require 'emojify.js'
 
