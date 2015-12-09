@@ -1,4 +1,3 @@
-xss = require 'xss'
 React = require 'react'
 emojify = require 'emojify.js'
 
@@ -26,7 +25,7 @@ App = React.createFactory React.createClass
       LiteMarkdown
         name: 'example'
         value: @state.text
-        emojify: emojify
+        emojify: emojify.replace
         className: 'markdown-body'
 
 React.render App(), document.getElementById 'app-mount'
