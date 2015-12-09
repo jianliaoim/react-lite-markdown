@@ -15,7 +15,7 @@ html, body, #app-mount {
 .app .lite-markdown.is-example {
   float: left;
 
-  width: 50vw;
+  width: 49vw;
   height: 100vh;
 
   overflow: auto;
