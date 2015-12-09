@@ -1,9 +1,12 @@
 MarkdownIt = require 'markdown-it'
 MarkdownItEmoji = require 'markdown-it-emoji'
+MarkdownItAttrs = require('markdown-it-attrs')
+
 
 markdown = new MarkdownIt()
 .set linkify: true, typographer: true
 .use MarkdownItEmoji
+.use MarkdownItAttrs
 .disable 'image'
 
 # exports

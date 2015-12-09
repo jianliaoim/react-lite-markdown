@@ -6,6 +6,7 @@
   "dependencies": {
     "classnames": "^2.2.0",
     "markdown-it": "^5.0.2",
+    "markdown-it-attrs": "^0.1.3",
     "markdown-it-emoji": "^1.1.0",
     "react": "^0.13.3"
   },
