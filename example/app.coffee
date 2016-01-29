@@ -1,4 +1,5 @@
 React = require 'react'
+ReactDOM = require 'react-dom'
 emojify = require 'emojify.js'
 
 LiteMarkdown = React.createFactory require '../src/index'
@@ -28,4 +29,4 @@ App = React.createFactory React.createClass
         emojify: emojify.replace
         className: 'markdown-body'
 
-React.render App(), document.getElementById 'app-mount'
+ReactDOM.render App(), document.getElementById 'app-mount'

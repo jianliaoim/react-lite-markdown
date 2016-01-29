@@ -8,7 +8,7 @@
     "markdown-it": "^5.0.2",
     "markdown-it-attrs": "^0.1.3",
     "markdown-it-emoji": "^1.1.0",
-    "react": "^0.13.3"
+    "react": "^0.14.7"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
@@ -22,6 +22,7 @@
     "jest-cli": "^0.8.0",
     "json-loader": "^0.5.4",
     "node-libs-browser": "^0.5.3",
+    "react-dom": "^0.14.7",
     "reset.css": "^2.0.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
