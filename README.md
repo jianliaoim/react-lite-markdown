@@ -46,7 +46,6 @@ T = React.PropTypes
 propTypes:
   name: T.string # For classname appear in component, with "is-#{@props.name}".
   value: T.string # Markdown content.
-  emojify: T.func # Specific emoji func in 简聊 project, you may not use it
   className: T.string # Markdown content classname.
 ```
 

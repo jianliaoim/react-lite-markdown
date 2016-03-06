@@ -12,17 +12,12 @@ module.exports = React.createClass
   propTypes:
     name: T.string
     value: T.string
-    emojify: T.func
     className: T.string
 
   getDefaultProps: ->
     name: ''
     value: ''
-    emojify: (->)
     className: 'markdown-body'
-
-  componentWillMount: ->
-    markdown.setEmojiFn @props.emojify
 
   getClassName: ->
     className = cx 'lite-markdown', "is-#{ @props.name }": @props.name? and @props.name.length
